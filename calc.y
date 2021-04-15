@@ -19,7 +19,6 @@
 %type <dval> exp
 %left PLUS MINUS
 %left MULT DIV
-%nonassoc UMINUS
 
 
 %% 
@@ -35,7 +34,7 @@ exp:		NUMBER                { $$ = $1; }
 			| exp MINUS exp       { $$ = $1 - $3; }
 			| exp MULT exp        { $$ = $1 * $3; }
 			| exp DIV exp         { if ($3==0) yyerror("divide by zero"); else $$ = $1 / $3; }
-			| MINUS exp %prec UMINUS { $$ = -$2; }
+			| MINUS exp { $$ = -$2; }
 			| L_PAREN exp R_PAREN { $$ = $2; }
 			;
 %%
