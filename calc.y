@@ -35,7 +35,7 @@ exp:		NUMBER                { $$ = $1; }
 			| exp MINUS exp       { $$ = $1 - $3; }
 			| exp MULT exp        { $$ = $1 * $3; }
 			| exp DIV exp         { if ($3==0) yyerror("divide by zero"); else $$ = $1 / $3; }
-			| MINUS exp { $$ = -$2; }
+			| MINUS exp %prec UMINUS { $$ = -$2; }
 			| L_PAREN exp R_PAREN { $$ = $2; }
 			;
 %%
@@ -45,9 +45,9 @@ int main(int argc, char **argv) {
       yyin = fopen(argv[1], "r");
       if (yyin == NULL){
          printf("syntax: %s filename\n", argv[0]);
-      }//end if
-   }//end if
-   yyparse(); // Calls yylex() for tokens.
+      }
+   }
+   yyparse(); 
    return 0;
 }
 
