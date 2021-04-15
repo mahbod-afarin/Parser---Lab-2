@@ -11,7 +11,7 @@
   int ival;
 }
 
-%start input
+%start line
 %token MULT DIV PLUS MINUS EQUAL L_PAREN R_PAREN END
 %token <dval> NUMBER
 %type <dval> exp
@@ -20,9 +20,6 @@
 
 
 %% 
-input:
-        | input line
-        ;
 
 line:		exp EQUAL END         { printf("\t%f\n", $1);}
 			;
