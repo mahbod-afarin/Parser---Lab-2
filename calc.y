@@ -11,7 +11,7 @@
   int ival;
 }
 
-%start line
+%start input
 %token MULT DIV PLUS MINUS EQUAL L_PAREN R_PAREN END
 %token <dval> NUMBER
 %type <dval> exp
