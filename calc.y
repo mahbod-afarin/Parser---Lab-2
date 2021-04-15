@@ -20,7 +20,7 @@
 
 
 %% 
-input:  input line
+input:  line
         ;
 
 line:		exp EQUAL END         { printf("\t%f\n", $1);}
