@@ -31,7 +31,7 @@ line:		exp EQUAL END         { printf("\t%f\n", $1);}
 			;
 
 exp:		NUMBER                { $$ = $1; }
-			| exp PLUS exp        { $$ = $1 + $3; }
+			| NUMBER PLUS NUMBER        { $$ = $1 + $3; }
 			| exp MINUS exp       { $$ = $1 - $3; }
 			| exp MULT exp        { $$ = $1 * $3; }
 			| exp DIV exp         { if ($3==0) yyerror("divide by zero"); else $$ = $1 / $3; }
