@@ -20,8 +20,7 @@
 
 
 %% 
-input:
-        | input line
+input:  input line
         ;
 
 line:		exp EQUAL END         { printf("\t%f\n", $1);}
@@ -43,6 +42,6 @@ int main(int argc, char **argv) {
 }
 
 void yyerror(const char *msg) {
-   printf("Line %d, position %d: %s\n", currLine, currPos, msg);
+   printf("** Line %d, position %d: %s\n", currLine, currPos, msg);
 }
 
