@@ -2,7 +2,7 @@
  #include <stdio.h>
  #include <stdlib.h>
  void yyerror(const char *msg);
- extern int currLine1;
+ extern int currLine;
  extern int currPos;
  FILE * yyin;
 %}
@@ -52,6 +52,6 @@ int main(int argc, char **argv) {
 }
 
 void yyerror(const char *msg) {
-   printf("** Line %d, position %d: %s\n", currLine1, currPos, msg);
+   printf("** Line %d, position %d: %s\n", currLine, currPos, msg);
 }
 
