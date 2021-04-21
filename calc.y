@@ -50,6 +50,12 @@ int main(int argc, char **argv)
       }
    }
    yyparse();
+
+   printf("# Numbers: %d\n", numNumbers);
+   printf("# Operators: %d\n", numOperators);
+   printf("# Parentheses: %d\n", numParens);
+   printf("# Equal Signs: %d\n", numEquals);
+   
    return 0;
 }
 
