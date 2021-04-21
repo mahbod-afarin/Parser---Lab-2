@@ -45,7 +45,7 @@ int main(int argc, char **argv)
       yyin = fopen(argv[1], "r");
       if (yyin == NULL)
 	  {
-         printf("syntax: %s filename\n", argv[0]);
+        printf("This is not a valid file name: %s filename\n", argv[0]);
       }
    }
    yyparse();
