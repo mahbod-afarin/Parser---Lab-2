@@ -4,6 +4,10 @@
  void yyerror(const char *msg);
  extern int currLine;
  extern int currPos;
+ int numNumbers = 0;
+ int numOperators = 0;
+ int numParens = 0;
+ int numEquals = 0;
  FILE *yyin;
 %}
 
@@ -55,7 +59,7 @@ int main(int argc, char **argv)
    printf("# Operators: %d\n", numOperators);
    printf("# Parentheses: %d\n", numParens);
    printf("# Equal Signs: %d\n", numEquals);
-   
+
    return 0;
 }
 
