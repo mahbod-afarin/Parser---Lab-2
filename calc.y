@@ -4,7 +4,7 @@
  void yyerror(const char *msg);
  extern int currLine;
  extern int currPos;
- FILE * yyin;
+ FILE *yyin;
 %}
 
 %union{
