@@ -4,10 +4,7 @@
  void yyerror(const char *msg);
  extern int currLine;
  extern int currPos;
-  int numNumbers;
-  int numOperators;
-  int numParens;
-  int numEquals;
+ extern int numNumbersو numOperatorsو numParensو numEquals;
  FILE *yyin;
 %}
 
