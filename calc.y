@@ -4,6 +4,7 @@
  void yyerror(const char *msg);
  extern int currLine;
  extern int currPos;
+ FILE * yyin;
 %}
 
 %union{
@@ -41,7 +42,6 @@ int main(int argc, char **argv)
 {
    if (argc > 1) 
    {
-	  FILE * yyin;
       yyin = fopen(argv[1], "r");
       if (yyin == NULL)
 	  {
