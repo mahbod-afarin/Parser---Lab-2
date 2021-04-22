@@ -46,9 +46,8 @@ int main(int argc, char **argv)
       yyin = fopen(argv[1], "r");
       if (yyin == NULL)
 	   {
-        //printf("This is not a valid file name: %s filename\n", argv[0]);
-		  //exit(0);
-        yyin = stdin; 
+        printf("This is not a valid file name: %s filename\n", argv[0]);
+		  exit(0);
       }
    }
    yyparse();
