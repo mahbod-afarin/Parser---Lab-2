@@ -2,8 +2,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 void yyerror(const char *msg);
-extern int cur_line;
-extern int cur_pos;
+extern int currLine;
+extern int currPos;
 extern int numNumbers, numOperators, numParens, numEquals;
 FILE *yyin;
 %}
