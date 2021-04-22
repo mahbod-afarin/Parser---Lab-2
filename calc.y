@@ -41,8 +41,30 @@ exp:    NUMBER                {$$=$1;}
 
 %%
 
-int main(int argc, char **argv) {
-    if (argc>1) {
-        yyin=fopen(argv[1],"r");
-        if (yyin==NULL) {
-            printf("This is not a valid filename: %s filename\n", argv[0]);
+int main(int argc, char **argv) 
+{
+   if (argc > 1) 
+   {
+      yyin = fopen(argv[1], "r");
+      if (yyin == NULL)
+	   {
+        printf("This is not a valid file name: %s filename\n", argv[0]);
+		  exit(0);
+      }
+   }
+   yyparse();
+
+   printf("# Numbers: %d\n", numNumbers);
+   printf("# Operators: %d\n", numOperators);
+   printf("# Parentheses: %d\n", numParens);
+   printf("# Equal Signs: %d\n", numEquals);
+
+   return 0;
+}
+
+void yyerror(const char *msg) 
+{
+   printf("Error at Line %d and position %d: %s\n", currLine, currPos, msg);
+   exit(0);
+}
+
